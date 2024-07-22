@@ -8,15 +8,17 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "@nomiclabs/hardhat-ethers": "^2.2.3",
-        "@nomiclabs/hardhat-waffle": "^2.0.6",
         "@openzeppelin/contracts": "^4.9.6",
-        "ethers": "^5.7.2",
         "express": "^4.19.2",
         "ripple-lib": "^1.10.1"
     },
     "devDependencies": {
-        "hardhat": "^2.6.4"
+        "@nomiclabs/hardhat-ethers": "^2.2.3",
+        "@nomiclabs/hardhat-waffle": "^2.0.6",
+        "chai": "^5.1.1",
+        "ethers": "^5.7.2",
+        "hardhat": "^2.22.6",
+        "ts-node": "^10.9.2"
     },
     "author": "",
     "license": "ISC"
