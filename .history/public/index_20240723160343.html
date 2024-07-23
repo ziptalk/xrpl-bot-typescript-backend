@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrage Bot</title>
+</head>
+<body>
+    <h1>Arbitrage Bot</h1>
+    <form id="asset-form">
+        <h2>Add Assets</h2>
+        <label for="currency">Currency:</label>
+        <select id="currency" name="currency">
+            <option value="XRP">XRP</option>
+            <option value="USD">USD</option>
+            <option value="WBTC">WBTC</option>
+            <option value="WETH">WETH</option>
+        </select>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <form id="withdraw-form">
+        <h2>Withdraw</h2>
+        <label for="withdraw-amount">Amount:</label>
+        <input type="number" id="withdraw-amount" name="withdraw-amount" required>
+        <label for="withdraw-address">Address:</label>
+        <input type="text" id="withdraw-address" name="withdraw-address" required>
+        <button type="submit">Withdraw</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

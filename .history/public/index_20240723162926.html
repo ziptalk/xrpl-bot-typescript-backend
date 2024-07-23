@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xumm Integration</title>
+</head>
+<body>
+    <h1>Xumm Integration Example</h1>
+    <button id="loginButton">Login with Xumm</button>
+    <button id="signRequestButton">Send Sign Request</button>
+    <script src="https://xumm.app/assets/cdn/xumm.min.js"></script>
+    <script>
+        const xumm = new Xumm('your_xumm_api_key');
+        
+        document.getElementById('loginButton').addEventListener('click', async () => {
+            try {
+                const state = await xumm.authorize();
+                console.log('Logged in:', state);
+                // Handle post-login logic here
+            } catch (error) {
+                console.error('Login error:', error);
+            }
+        });
+
+        document.getElementById('signRequestButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/send-sign-request', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ transaction: {/* Your transaction details */} })
+                });
+                const data = await response.json();
+                console.log('Sign request sent:', data.qrCodeUrl);
+                // Display the QR code URL to the user
+            } catch (error) {
+                console.error('Error sending sign request:', error);
+            }
+        });
+    </script>
+</body>
+</html>

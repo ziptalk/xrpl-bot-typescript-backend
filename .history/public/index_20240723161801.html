@@ -1,0 +1,27 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xumm Integration</title>
+</head>
+<body>
+    <h1>Xumm Integration Example</h1>
+    <button id="loginButton">Login with Xumm</button>
+    <script src="https://xumm.app/assets/cdn/xumm.min.js"></script>
+    <script>
+        const xumm = new Xumm('API_KEY');
+        
+        document.getElementById('loginButton').addEventListener('click', async () => {
+            try {
+                const state = await xumm.authorize();
+                console.log('Logged in:', state);
+                // Handle post-login logic here
+            } catch (error) {
+                console.error('Login error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
